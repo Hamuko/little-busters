@@ -95,9 +95,9 @@ def main(dry_run, threshold, files):
                 click.echo('{}: p{:0>3}/{:0>3} ({:.1%} < {:.0%})'
                            .format(filename, index + 1,
                                    file_count, diff, target_diff))
-        if not dry_run:
-            new_file = create_archive(archive, [x[0] for x in non_pages])
-            copyfile(new_file.name, file)
+            if not dry_run:
+                new_file = create_archive(archive, [x[0] for x in non_pages])
+                copyfile(new_file.name, file)
 
 if __name__ == '__main__':
     main()
