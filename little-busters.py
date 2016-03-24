@@ -77,7 +77,7 @@ def get_sizes(archive):
               help='Do not overwrite any files.')
 @click.option('--threshold', default=0.2,
               help='Percent value images may differ from average resolution')
-@click.argument('files', nargs=-1)
+@click.argument('files', required=True, nargs=-1)
 def main(dry_run, threshold, files):
     """Goes through one or more zip archives in order to find images with
     resolution differing too much from the average.
